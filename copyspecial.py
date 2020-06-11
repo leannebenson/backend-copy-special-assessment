@@ -19,13 +19,24 @@ import argparse
 
 def get_special_paths(dirname):
     """Given a dirname, returns a list of all its special files."""
-    # your code here
-    return
+    list_files = []
+    path = os.listdir(dirname) #could need to be path_list
+    for file_name in path:
+        match = re.search(r'__(\w+)__', file_name)
+        if match:
+            list_files.append(os.path.abspath(os.path.join(dirname, file_name)))
+    return list_files
 
 
 def copy_to(path_list, dest_dir):
-    # your code here
-    return
+
+    if not os.path.exists(dest_dir):
+        os.mkdir(dest_dir)
+    for path in path_list:
+        file_name = os.path.basename(path)
+        shutil.copy(path, os.path.join(dest_dir, file_name))
+    # could also error out if path_list doesnt match up with 
+    # path variable from get_special_paths
 
 
 def zip_to(path_list, dest_zip):
