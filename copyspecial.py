@@ -53,8 +53,8 @@ def zip_to(path, dest_zip):
     os.system(command)
     #return
 
-def zip_to_two(paths, zippath):
-    command = ["zip", "-j", zippath]
+def zip_to_two(paths, zip_path):
+    command = ["zip", "-j", zip_path]
     command.extend(paths)
     print("command I am going to do: {}".format(' '.join(command)))
     subprocess.check_output(command)
