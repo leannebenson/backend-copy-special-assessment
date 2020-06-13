@@ -24,15 +24,15 @@ def get_special_paths(dirname):
     for file in files:
         match = re.search(r'__(\w+)__', file)
         if match:
-            list_files.append(file)
-            # list_files.append(os.path.abspath(os.path.join(dirname, file)))
+            #list_files.append(file)
+            list_files.append(os.path.abspath(os.path.join(dirname, file)))
     return list_files
 
 
 def copy_to(path, files):
 
     if not os.path.exists(path):
-        os.mkdir(path)
+        os.makedirs(path)
     else:
         print("This path exists")
 
