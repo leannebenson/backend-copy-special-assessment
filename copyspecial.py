@@ -89,6 +89,7 @@ def main(args):
         print('\n'.join(all_paths))
         # for file in all_paths:
         #     print(os.path.abspath(file))
+        # could need to be an if, elif, else statement instead?
     
     
 
