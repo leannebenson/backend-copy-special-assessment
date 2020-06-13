@@ -41,6 +41,8 @@ def copy_to(path_list, dest_dir):
 
 def zip_to(path_list, dest_zip):
     # your code here
+    # command = "zip -j {} {}".format(zippath, ' '.join(paths)) #thanks Doug
+
     return
 
 
